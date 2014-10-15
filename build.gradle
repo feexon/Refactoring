@@ -1,0 +1,15 @@
+version = "1.0"
+subprojects {
+    apply plugin: 'idea'
+    apply plugin: 'java'
+    idea {
+        module {
+            downloadSources = false
+            sourceDirs = sourceSets.main.java.srcDirs
+            testSoruceDirs = sourceSets.test.java.srcDirs
+            outputDir = sourceSets.main.output.classesDir
+            testOutputDir = sourceSets.test.output.classesDir
+
+        }
+    }
+}
