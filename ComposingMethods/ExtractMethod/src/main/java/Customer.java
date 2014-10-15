@@ -13,10 +13,7 @@ public class Customer {
         Enumeration e = _orders.elements();
         double outstanding = 0.0;
 
-        // print banner
-        System.out.println("**************************");
-        System.out.println("***** Customer Owes ******");
-        System.out.println("**************************");
+        printBanner();
 
         // calculate outstanding
         while (e.hasMoreElements()) {
@@ -27,5 +24,11 @@ public class Customer {
         //print details
         System.out.println("name:" + _name);
         System.out.println("amount" + outstanding);
+    }
+
+    private void printBanner() {
+        System.out.println("**************************");
+        System.out.println("***** Customer Owes ******");
+        System.out.println("**************************");
     }
 }
