@@ -1,2 +1,4 @@
 rootProject.name = 'Refactoring'
-include ':ComposingMethods', ':ComposingMethods/ExtractMethod'
+include ':ComposingMethods',
+        ':ComposingMethods/ExtractMethod',
+        ':ComposingMethods/InlineMethod'
