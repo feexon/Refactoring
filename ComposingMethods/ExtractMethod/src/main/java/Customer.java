@@ -10,17 +10,8 @@ public class Customer {
     private String _name;
 
     void printOwing() {
-        Enumeration e = _orders.elements();
-        double outstanding = 0.0;
-
         printBanner();
-
-        // calculate outstanding
-        while (e.hasMoreElements()) {
-            Order each = (Order) e.nextElement();
-            outstanding += each.getAmount();
-        }
-
+        double outstanding = getOutstanding();
         printDetails(outstanding);
     }
 
@@ -28,6 +19,16 @@ public class Customer {
         System.out.println("**************************");
         System.out.println("***** Customer Owes ******");
         System.out.println("**************************");
+    }
+
+    private double getOutstanding() {
+        Enumeration _enum = _orders.elements();
+        double result = 0;
+        while (_enum.hasMoreElements()) {
+            Order each = (Order) _enum.nextElement();
+            result += each.getAmount();
+        }
+        return result;
     }
 
     private void printDetails(double outstanding) {
